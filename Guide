@@ -1,0 +1,2 @@
+javac --module-path lib/javafx-sdk-24.0.1/lib --add-modules javafx.controls src/Main.java -d out
+java --module-path lib/javafx-sdk-24.0.1/lib --add-modules javafx.controls -cp out Main
