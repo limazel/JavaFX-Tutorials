@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile JavaFX",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "--module-path", "lib/javafx-sdk-24.0.1/lib",
+        "--add-modules", "javafx.controls",
+        "-d", "out",
+        "${file}"  // Açık olan dosya
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$javac"],
+      "detail": "Compiles the currently open Java file with JavaFX"
+    }
+  ]
+}
+
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile All Java Files",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "--module-path", "lib/javafx-sdk-24.0.1/lib",    // JavaFX modül yolunu belirtiyoruz
+        "--add-modules", "javafx.controls",             // JavaFX modülünü ekliyoruz
+        "src/*.java",                                    // Tüm .java dosyalarını derle
+        "-d", "out"                                      // Derleme çıktı dizini
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$javac"],
+      "detail": "Derleme işlemi tüm .java dosyalarını içerecek."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run JavaFX File",
+      "request": "launch",
+      "mainClass": "${fileBasenameNoExtension}",  // Açık dosyanın adını alır
+      "vmArgs": "--module-path lib/javafx-sdk-24.0.1/lib --add-modules javafx.controls",
+      "classPaths": [
+        "${workspaceFolder}/out"  // Çalıştırma için out dizini
+      ],
+      "preLaunchTask": "Compile JavaFX",
+      "cwd": "${workspaceFolder}"  // Çalışma dizini: workspace klasörü
+    }
+  ]
+}
